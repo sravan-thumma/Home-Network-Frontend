@@ -1,0 +1,41 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      <h2>Transactions List</h2>
+      <b><label for="info" style="color: red;">(-)Debit (+)Credit</label></b>
+    </div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <!--<th>Id</th>-->
+            <th>Date</th>
+            <th>Repay Date</th>
+            <th>Description</th>
+            <th>Debit Account</th>
+            <th>Credit Card</th>
+            <th>Borrowed From Me</th>
+            <th>Borrowed By Me</th>
+            <th>Status</th>
+            <th style="text-align: center;">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let transaction of transactions"  [ngStyle]="{'color': transaction.status==='Pending' ? 'red' : 'green'}">
+            <!--<td>{{transaction.id}}</td>-->
+            <td style="white-space: nowrap;">{{transaction.date  | date:'dd-MM-yyyy' }}</td>
+            <td style="white-space: nowrap;">{{transaction.repayDate  | date:'dd-MM-yyyy' }}</td>
+            <td style="white-space: nowrap;">{{transaction.description}}</td>
+            <td>{{transaction.debitCard}}</td>
+            <td>{{transaction.creditCard}}</td>
+            <td>{{transaction.borrowedFromMe}}</td>
+            <td>{{transaction.borrowedByMe}}</td>
+            <td>{{transaction.status}}</td>
+            <td style="white-space: nowrap;"><button title="Delete" (click)="deleteTransaction(transaction.id)" class="btn btn-danger fa fa-trash"></button>
+                <button title="Details" (click)="transactionDetails(transaction.id)" class="btn btn-info fa fa-info-circle" style="margin-left: 5px"></button>
+                <button title="Update" (click)="updateTransaction(transaction.id)" class="btn btn-info fa fa-edit" style="margin-left: 5px"></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

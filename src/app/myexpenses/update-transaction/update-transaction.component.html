@@ -1,0 +1,74 @@
+<div class="container">
+    <h3 style="text-align: center;">Update Transaction</h3><br>
+    <b><label for="info" style="color: red;">(-)Debit (+)Credit</label></b>
+    <div style="height: 400px;">
+      <form ngNativeValidate #form [ngStyle]="{'display': userid===localuserid ? 'block' : 'none'}" (ngSubmit)="onSubmit()">
+        <!--#transactionForm="ngForm"-->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                <label for="name">Description</label>
+                <input type="text" class="form-control" autocomplete="off" id="description" required [(ngModel)]="trans.description" name="description">
+                </div>
+                <div class="form-group">
+                    <label for="date">Date:</label>
+                    <input type="date" class="form-control" id="date" name="date" disabled required [(ngModel)]="trans.date">
+                </div>
+                <div class="form-group">
+                    <label for="debitCard">Debit Card:</label>
+                    <input type="text" class="form-control" autocomplete="off" id="debitCard" name="debitCard" [(ngModel)]="trans.debitCard">
+                </div>
+                <div><br></div>
+                <div class="form-group">
+                    <label for="creditCard">Credit Card:</label>
+                    <input type="text" class="form-control" autocomplete="off" id="creditCard" name="creditCard" [(ngModel)]="trans.creditCard">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="repaydate">Repay Date:</label>
+                    <input type="date" class="form-control" id="repaydate" name="repaydate" [(ngModel)]="trans.repayDate">
+                </div>
+                    <div class="form-group">
+                        <label for="borrowedFromMe">Borrowed From Me:</label>
+                        <input type="text" class="form-control" autocomplete="off" id="borrowedFromMe" name="borrowedFromMe" [(ngModel)]="trans.borrowedFromMe">
+                    </div>
+                    <div class="form-group">
+                        <label for="borrowedByMe">Borrowed By Me:</label>
+                        <input type="text" class="form-control" autocomplete="off" id="borrowedByMe" name="borrowedByMe" [(ngModel)]="trans.borrowedByMe">
+                    </div>
+                    <!--<div class="form-group">
+                        <label>Transaction Type : &nbsp;</label>
+                        <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" checked id="debit" name="transType" value="-" formControlName="transType" [(ngModel)]="transtype">
+                        <label class="form-check-label" for="debit">Debit (-)</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                        <input type="radio" class="form-check-input" id="credit" name="transType" value="+" formControlName="transType" [(ngModel)]="transtype">
+                        <label class="form-check-label" for="credit">Credit (+)</label>
+                        </div>
+                    </div>-->
+                    <div class="form-group">
+                        <label for="status">Status:</label>
+                        <select class="form-control" id="status" name="status" [(ngModel)]="trans.status">
+                        <option value="" disabled selected>Select Status</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Completed">Completed</option>
+                        </select>
+                    </div>
+                
+        <!-- Display custom error message -->
+        <!--<div *ngIf="!transactionForm.valid" class="alert alert-danger">
+        At least one of the fields (Debit Card, Credit Card, Borrowed From Me, or Borrowed By Me) is required.
+        </div>
+        <div *ngIf="transactionForm.controls['status'].invalid && (transactionForm.controls['borrowedFromMe'].value || transactionForm.controls['borrowedByMe'].value)"
+             class="alert alert-danger">
+          Status is required when Borrowed From Me or Borrowed By Me is specified.
+        </div> -->
+        <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+    </div>
+      </form>
+    </div>
+    </div>
+    
