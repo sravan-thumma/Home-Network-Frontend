@@ -18,6 +18,9 @@ export class ExpensesService {
   //getTransactionByUserId(user_id:number):Observable<any>{
   //  return this.http.get(`${this.baseUrl}/userid=${user_id}`);
   //}
+  getTransactionByDates(startdate:any,enddate:any,user_id:number):Observable<any[]>{
+    return this.http.get<any[]>(`${this.baseUrl}/${startdate}/${enddate}/${user_id}`);
+  }
   getTransactionsList(): Observable<any> {
     console.log(this.http.get(`${this.baseUrl}`));
     return this.http.get(`${this.baseUrl}`);

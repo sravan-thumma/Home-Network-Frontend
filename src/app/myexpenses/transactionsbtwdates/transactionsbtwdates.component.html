@@ -1,1 +1,56 @@
-<p>transactionsbtwdates works!</p>
+<div class="container">
+    <h3 style="text-align: center;">Transactions By Dates</h3><br>
+    <b><label for="info" style="color: red;">(-)Debit (+)Credit</label></b>
+    <div>
+        <form class="form-inline" ngNativeValidate #form (ngSubmit)="onSubmit()">
+            <!--#transactionForm="ngForm"-->
+            <div style="margin-bottom: 20px;" class="row">
+                    <div class="form-group mr-3">
+                        <label for="startdate" style="margin-left: 200px;"><b>Start Date : </b></label>
+                        <input type="date" style="margin-left: 20px;" class="form-control" id="startdate" name="startdate" required [(ngModel)]="originalStartdate">
+                    </div>
+                    <div class="form-group mr-3">
+                        <label for="enddate" style="margin-left: 50px;"><b>End Date : </b></label>
+                        <input type="date" style="margin-left: 20px;" class="form-control" id="enddate" name="enddate" required [(ngModel)]="originalEnddate">
+                    </div>
+                        <button style="margin-left: 20px;" type="submit" class="btn btn-success">Submit</button>
+            </div>
+        </form>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped">
+        <thead>
+            <tr>
+            <!--<th>Id</th>-->
+            <th>Date</th>
+            <th>Repay Date</th>
+            <th>Description</th>
+            <th>Debit Account</th>
+            <th>Credit Card</th>
+            <th>Borrowed From Me</th>
+            <th>Borrowed By Me</th>
+            <th>Status</th>
+            <th style="text-align: center;">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let transaction of trans"  [ngStyle]="{'color': transaction.status==='Pending' ? 'red' : 'green'}">
+            <!--<td>{{transaction.id}}</td>-->
+            <td style="white-space: nowrap;">{{transaction.date  | date:'dd-MM-yyyy' }}</td>
+            <td style="white-space: nowrap;">{{transaction.repayDate  | date:'dd-MM-yyyy' }}</td>
+            <td style="white-space: nowrap;">{{transaction.description}}</td>
+            <td>{{transaction.debitCard}}</td>
+            <td>{{transaction.creditCard}}</td>
+            <td>{{transaction.borrowedFromMe}}</td>
+            <td>{{transaction.borrowedByMe}}</td>
+            <td>{{transaction.status}}</td>
+            <td style="white-space: nowrap;"><button title="Delete" (click)="deleteTransaction(transaction.id)" class="btn btn-danger fa fa-trash"></button>
+                <button title="Details" (click)="transactionDetails(transaction.id)" class="btn btn-info fa fa-info-circle" style="margin-left: 5px"></button>
+                <button title="Update" (click)="updateTransaction(transaction.id)" class="btn btn-info fa fa-edit" style="margin-left: 5px"></button>
+            </td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+    

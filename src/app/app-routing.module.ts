@@ -22,7 +22,7 @@ const routes: Routes = [
   {path:'createtransaction',component:CreateTransactionComponent,canActivate:[AuthGuard]},
   {path:'transactiondetails/:id',component:TransactionDetailsComponent,canActivate:[AuthGuard]},
   {path:'edittransaction/:id',component:UpdateTransactionComponent,canActivate:[AuthGuard]},
-  {path:'filterbydates',component:TransactionDetailsComponent,canActivate:[AuthGuard]}
+  {path:'filterbydates',component:TransactionsbtwdatesComponent,canActivate:[AuthGuard]}
 ];
 
 @NgModule({
