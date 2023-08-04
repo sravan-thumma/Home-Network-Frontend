@@ -35,9 +35,9 @@ import { TransactionsbtwdatesComponent } from './myexpenses/transactionsbtwdates
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [BnNgIdleService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -13,20 +13,48 @@ import { UpdateTransactionComponent } from './myexpenses/update-transaction/upda
 import { TransactionsbtwdatesComponent } from './myexpenses/transactionsbtwdates/transactionsbtwdates.component';
 const routes: Routes = [
   //{ path: '', redirectTo: 'users', pathMatch: 'full' },
-  { path: 'users', component: UserListComponent ,canActivate:[AuthGuard] },
-  { path: 'details/:id', component: UserDetailsComponent,canActivate:[AuthGuard] },
-  { path: 'update/:id', component: UpdateUserComponent,canActivate:[AuthGuard] },
-  { path: 'add', component:  CreateUserComponent,canActivate:[AuthGuard]},
-  {path: '',component:LoginComponent,pathMatch: 'full'},
-  {path:'transactions',component:TransactionListComponent,canActivate:[AuthGuard]},
-  {path:'createtransaction',component:CreateTransactionComponent,canActivate:[AuthGuard]},
-  {path:'transactiondetails/:id',component:TransactionDetailsComponent,canActivate:[AuthGuard]},
-  {path:'edittransaction/:id',component:UpdateTransactionComponent,canActivate:[AuthGuard]},
-  {path:'filterbydates',component:TransactionsbtwdatesComponent,canActivate:[AuthGuard]}
+  { path: 'users', component: UserListComponent, canActivate: [AuthGuard] },
+  {
+    path: 'details/:id',
+    component: UserDetailsComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'update/:id',
+    component: UpdateUserComponent,
+    canActivate: [AuthGuard],
+  },
+  { path: 'add', component: CreateUserComponent, canActivate: [AuthGuard] },
+  { path: '', component: LoginComponent, pathMatch: 'full' },
+  {
+    path: 'transactions',
+    component: TransactionListComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'createtransaction',
+    component: CreateTransactionComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'transactiondetails/:id',
+    component: TransactionDetailsComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'edittransaction/:id',
+    component: UpdateTransactionComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'filterbydates',
+    component: TransactionsbtwdatesComponent,
+    canActivate: [AuthGuard],
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{useHash:true})],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
