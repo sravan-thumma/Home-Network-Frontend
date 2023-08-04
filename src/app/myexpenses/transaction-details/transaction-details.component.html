@@ -1,36 +1,45 @@
-<h2>Transaction Details</h2> 
-<b><label for="info" style="color: red;">(-)Debit (+)Credit</label></b>
-<hr/>
-<div *ngIf="trans" [ngStyle]="{'display': userid===localuserid ? 'block' : 'none'}">
-    <div>
-        <label><b>Transaction ID : </b></label> {{trans.id}}
-      </div>
+<h2>Transaction Details</h2>
+<b><label for="info" style="color: red">(-)Debit (+)Credit</label></b>
+<hr />
+<div
+  *ngIf="trans"
+  [ngStyle]="{ display: userid === localuserid ? 'block' : 'none' }"
+>
   <div>
-    <label><b>Description : </b></label> {{trans.description}}
+    <label><b>Transaction ID : </b></label> {{ trans.id }}
   </div>
   <div>
-    <label><b>Transaction Date : </b></label> {{trans.date  | date:'dd-MM-yyyy' }}
+    <label><b>Description : </b></label> {{ trans.description }}
   </div>
-  <div [ngStyle]="{'display': trans.repayDate===null ? 'none' : 'block'}">
-    <label><b>Repay Date : </b></label> {{trans.repayDate  | date:'dd-MM-yyyy' }}
-  </div> 
-  <div [ngStyle]="{'display': trans.debitCard===null ? 'none' : 'block'}">
-    <label><b>Debit Account : </b></label> {{trans.debitCard}}
-  </div> 
-  <div [ngStyle]="{'display': trans.creditCard===null ? 'none' : 'block'}">
-    <label><b>Credit Account : </b></label> {{trans.creditCard}}
-  </div> 
-  <div [ngStyle]="{'display': trans.borrowedFromMe===null ? 'none' : 'block'}">
-    <label><b>Borrowed From Me :</b></label> {{trans.borrowedFromMe}}
-  </div> 
-  <div [ngStyle]="{'display': trans.borrowedByMe===null ? 'none' : 'block'}">
-    <label><b>Borrowed By Me :</b></label> {{trans.borrowedByMe}}
-  </div> 
-  <div [ngStyle]="{'display': trans.status===null ? 'none' : 'block'}">
-    <label><b>Status : </b></label> {{trans.status}}
-  </div> 
+  <div>
+    <label><b>Transaction Date : </b></label>
+    {{ trans.date | date : "dd-MM-yyyy" }}
+  </div>
+  <div [ngStyle]="{ display: trans.repayDate === null ? 'none' : 'block' }">
+    <label><b>Repay Date : </b></label>
+    {{ trans.repayDate | date : "dd-MM-yyyy" }}
+  </div>
+  <div [ngStyle]="{ display: trans.debitCard === null ? 'none' : 'block' }">
+    <label><b>Debit Account : </b></label> {{ trans.debitCard }}
+  </div>
+  <div [ngStyle]="{ display: trans.creditCard === null ? 'none' : 'block' }">
+    <label><b>Credit Account : </b></label> {{ trans.creditCard }}
+  </div>
+  <div
+    [ngStyle]="{ display: trans.borrowedFromMe === null ? 'none' : 'block' }"
+  >
+    <label><b>Borrowed From Me :</b></label> {{ trans.borrowedFromMe }}
+  </div>
+  <div [ngStyle]="{ display: trans.borrowedByMe === null ? 'none' : 'block' }">
+    <label><b>Borrowed By Me :</b></label> {{ trans.borrowedByMe }}
+  </div>
+  <div [ngStyle]="{ display: trans.status === null ? 'none' : 'block' }">
+    <label><b>Status : </b></label> {{ trans.status }}
+  </div>
 </div>
 
-<br>
-<br>
-<button (click)="list()" class="btn btn-primary">Back to Transactions List</button><br>
+<br />
+<br />
+<button (click)="list()" class="btn btn-primary">
+  Back to Transactions List</button
+><br />

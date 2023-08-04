@@ -4,19 +4,22 @@ import { BnNgIdleService } from 'bn-ng-idle';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'Home Network';
-  constructor(private router:Router,private bnIdle:BnNgIdleService){}
-  ngOnInit(): void{
+  constructor(private router: Router, private bnIdle: BnNgIdleService) {}
+  ngOnInit(): void {
     this.bnIdle.startWatching(600).subscribe((res) => {
-      if(res) {
-        console.log("Session Expired");
-        sessionStorage.removeItem("currentUser");
+      if (res) {
+        console.log('Session Expired');
+        sessionStorage.removeItem('currentUser');
         this.router.navigate(['']);
       }
     });
   }
+  OnLogout() {
+    sessionStorage.removeItem('currentUser');
+    this.router.navigate(['']);
+  }
 }
-

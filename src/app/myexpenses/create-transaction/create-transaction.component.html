@@ -1,7 +1,7 @@
 <div class="container">
 <h3 style="text-align: center;">Add Transaction</h3><br>
 <b><label for="info" style="color: red;">(-)Debit (+)Credit</label></b>
-<div [hidden]="submitted" style="height: 400px;">
+<div class="card-body" [hidden]="submitted" style="width: auto;">
   <form ngNativeValidate #form (ngSubmit)="onSubmit()">
     <!--#transactionForm="ngForm"-->
     <div class="row">
