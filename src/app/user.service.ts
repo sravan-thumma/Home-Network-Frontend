@@ -6,10 +6,14 @@ import { user } from './user';
   providedIn: 'root',
 })
 export class UserService {
-  private baseUrl = 'http://192.168.0.108:8080/home/v1/users';
-  private loginUrl = 'http://192.168.0.108:8080/home/v1/userlogin';
+  private domain=sessionStorage.getItem('currentDomain');
+  private baseUrl = this.domain+'/home/v1/users';
+  private loginUrl = this.domain+'/home/v1/userlogin';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    console.log('TRRR');
+  }
+
   getUser(id: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/${id}`);
   }
@@ -27,6 +31,7 @@ export class UserService {
     return this.http.post(`${this.baseUrl}`, user);
   }
   userLogin(username: string, password: string): Observable<any> {
+    console.log(this.loginUrl);
     return this.http.get(`${this.loginUrl}/${username}&${password}`);
   }
 }

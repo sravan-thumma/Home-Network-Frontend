@@ -28,7 +28,7 @@ import { TransactionsbtwdatesComponent } from './myexpenses/transactionsbtwdates
     CreateTransactionComponent,
     UpdateTransactionComponent,
     TransactionDetailsComponent,
-    TransactionsbtwdatesComponent,
+    TransactionsbtwdatesComponent
   ],
   imports: [
     BrowserModule,

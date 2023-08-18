@@ -37,6 +37,13 @@
             >
               Update
             </button>
+            <button *ngIf="role==='Admin' "
+              (click)="loginAsUser(user.id)"
+              class="btn btn-danger"
+              style="margin-left: 10px"
+            >
+              Login
+            </button>
           </td>
         </tr>
       </tbody>

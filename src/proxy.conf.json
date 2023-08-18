@@ -1,0 +1,10 @@
+{
+    "/api": {
+      "target": "https://homenetwork-dev.free.nf",
+      "secure": false,
+      "changeOrigin": true,
+      "pathRewrite": {
+              "^/api": ""
+        }
+    }
+  }

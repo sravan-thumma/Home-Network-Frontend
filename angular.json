@@ -69,7 +69,8 @@
               "browserTarget": "homenetwork:build:production"
             },
             "development": {
-              "browserTarget": "homenetwork:build:development"
+              "browserTarget": "homenetwork:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

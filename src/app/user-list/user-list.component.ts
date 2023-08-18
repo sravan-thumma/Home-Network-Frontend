@@ -11,10 +11,13 @@ import { OnInit } from '@angular/core';
 })
 export class UserListComponent implements OnInit {
   users!: Observable<user[]>;
+  user!: user;
+  role!:any;
   constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit(): void {
     this.reloadData();
+    this.role=sessionStorage.getItem('role');
   }
   reloadData() {
     this.users = this.userService.getUsersList();
@@ -33,5 +36,24 @@ export class UserListComponent implements OnInit {
       },
       (error) => console.log(error)
     );
+  }
+  loginAsUser(id:number){
+    this.userService.getUser(id).subscribe(
+      (data) => {
+        this.user = new user();
+        console.log(data);
+        this.user = data;
+        sessionStorage.setItem('currentUser', data.username);
+        //sessionStorage.setItem('role', data.role); //Not Changing the Login Role
+        sessionStorage.setItem('userid', data.id);
+
+      },
+      (error) => console.log(error)
+    );
+    this.gottoList(id);
+  }
+  gottoList(id: number) {
+    //this.router.navigate(['/transactions']);
+    this.router.navigate(['transactions', { User:id}]);
   }
 }

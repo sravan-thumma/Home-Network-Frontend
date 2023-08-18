@@ -6,9 +6,12 @@ import { transaction } from './transaction';
   providedIn: 'root',
 })
 export class ExpensesService {
-  private baseUrl = 'http://192.168.0.108:8080/home/v1/transactions';
+  private domain=sessionStorage.getItem('currentDomain');
+  private baseUrl = this.domain+'/home/v1/transactions';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    console.log('TTTTTT');
+  }
   getTransaction(id: string): Observable<any> {
     return this.http.get(`${this.baseUrl}/${id}`);
   }

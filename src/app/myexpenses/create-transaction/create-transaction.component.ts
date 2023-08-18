@@ -46,14 +46,17 @@ export class CreateTransactionComponent {
   }
   save() {
     this.expensesService.createTransaction(this.trans).subscribe(
-      (data) => console.log(data),
+      (data) => {
+        console.log(data)
+      },
       (error) => console.log(error)
     );
     this.trans = new transaction();
     this.gotoList();
   }
   gotoList() {
-    this.router.navigateByUrl('/transactions');
+    this.router.navigate(['transactions', { Action:'Refresh' }]);
+    //this.router.navigateByUrl('/transactions');
   }
   todayDate(): string {
     const today = new Date();

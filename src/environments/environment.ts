@@ -1,3 +1,4 @@
 export const environment = {
-    production:false
+    production:true,
+    apiUrl: 'https://homenetwork-dev.free.nf'
 };
