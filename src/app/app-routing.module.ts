@@ -11,6 +11,7 @@ import { CreateTransactionComponent } from './myexpenses/create-transaction/crea
 import { TransactionDetailsComponent } from './myexpenses/transaction-details/transaction-details.component';
 import { UpdateTransactionComponent } from './myexpenses/update-transaction/update-transaction.component';
 import { TransactionsbtwdatesComponent } from './myexpenses/transactionsbtwdates/transactionsbtwdates.component';
+import { AppComponent } from './app.component';
 const routes: Routes = [
   //{ path: '', redirectTo: 'users', pathMatch: 'full' },
   { path: 'users', component: UserListComponent, canActivate: [AuthGuard] },
@@ -25,7 +26,8 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   { path: 'add', component: CreateUserComponent, canActivate: [AuthGuard] },
-  { path: '', component: LoginComponent, pathMatch: 'full' },
+  
+  {path:'login' ,component:LoginComponent,pathMatch: 'full' },
   {
     path: 'transactions',
     component: TransactionListComponent,
