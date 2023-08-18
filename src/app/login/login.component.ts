@@ -1,7 +1,6 @@
 import { user } from '../user';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ObservableInput } from 'rxjs';
-import { RouterTestingHarness } from '@angular/router/testing';
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 @Component({
@@ -13,11 +12,11 @@ export class LoginComponent implements OnInit {
   username!: string;
   password!: string;
   constructor(
-    private userservice: UserService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private userservice: UserService,
   ) {}
-  ngOnInit(): void {
+  ngOnInit() {
     /*if(localStorage.getItem("currentUser")){
         console.log(true)
         this.router.navigate(['users'])
