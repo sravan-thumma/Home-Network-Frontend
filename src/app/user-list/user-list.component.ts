@@ -20,7 +20,14 @@ export class UserListComponent implements OnInit {
     this.role=sessionStorage.getItem('role');
   }
   reloadData() {
-    this.users = this.userService.getUsersList();
+    this.users=this.userService.getUsersList();
+    /*.subscribe(
+      (data)=>{
+        this.users=data;
+      },(error)=>{
+        console.log(error);
+      }
+    )*/
   }
   userDetails(id: number) {
     this.router.navigate(['details', id]);
