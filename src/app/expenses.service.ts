@@ -35,10 +35,10 @@ export class ExpensesService {
     return this.http.get(`${this.baseUrl}`);
   }
   updateTransaction(id: string, value: any): Observable<Object> {
-    return this.http.put(`${this.baseUrl}/${id}`, value);
+    return this.http.post(`${this.baseUrl}/${id}`, value);
   }
   deleteTransaction(id: string): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
+    return this.http.delete(`${this.baseUrl}/delete/${id}`, { responseType: 'text' });
   }
   createTransaction(transaction: Object): Observable<Object> {
     return this.http.post(`${this.baseUrl}`, transaction);

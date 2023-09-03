@@ -25,10 +25,10 @@ export class UserService{
     return this.http.get(`${sessionStorage.getItem('baseUrl')}`);
   }
   updateUser(id: number, value: any): Observable<Object> {
-    return this.http.put(`${sessionStorage.getItem('baseUrl')}/${id}`, value);
+    return this.http.post(`${sessionStorage.getItem('baseUrl')}/${id}`, value);
   }
   deleteUser(id: number): Observable<any> {
-    return this.http.delete(`${sessionStorage.getItem('baseUrl')}/${id}`, { responseType: 'text' });
+    return this.http.get(`${sessionStorage.getItem('baseUrl')}/delete/${id}`, { responseType: 'text' });
   }
   createUser(user: Object): Observable<Object> {
     return this.http.post(`${sessionStorage.getItem('baseUrl')}`, user);

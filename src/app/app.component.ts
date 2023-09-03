@@ -45,7 +45,6 @@ export class AppComponent{
     sessionStorage.removeItem('currentUser');
     sessionStorage.removeItem('userid');
     sessionStorage.removeItem('role');
-    window.location.reload();
-    this.router.navigateByUrl('');
+    this.router.navigate(['']);
   }
 }
