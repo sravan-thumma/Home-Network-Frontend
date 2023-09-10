@@ -1,4 +1,4 @@
 export const environment = {
     production:true,
-    apiUrl: 'https://homenetwork-dev.free.nf'
+    apiUrl: 'http://expenses.homenetwork-dev.free.nf'
 };

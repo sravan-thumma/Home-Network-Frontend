@@ -35,8 +35,8 @@ export class UserListComponent implements OnInit {
   updateDetails(id: number) {
     this.router.navigate(['update', id]);
   }
-  deleteUser(id: number) {
-    this.userService.deleteUser(id).subscribe(
+  async deleteUser(id: number) {
+    await this.userService.deleteUser(id).toPromise().then(
       (data) => {
         console.log(data);
         this.reloadData();

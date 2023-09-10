@@ -75,8 +75,8 @@ export class TransactionListComponent implements OnInit {
   updateTransaction(id: string) {
     this.router.navigate(['edittransaction', id]);
   }
-  deleteTransaction(id: string) {
-    this.expensesService.deleteTransaction(id).subscribe(
+  async deleteTransaction(id: string) {
+    await this.expensesService.deleteTransaction(id).toPromise().then(
       (data) => {
         console.log(data);
         this.reloadData();

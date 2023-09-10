@@ -32,18 +32,19 @@ export class UpdateTransactionComponent implements OnInit {
       (error) => console.log(error)
     );
   }
-  updateTransaction() {
-    this.expensesservice
+ async updateTransaction() {
+  //await this.http.get(url,this.httpOptions).toPromise().then((data:any)=>
+    await this.expensesservice
       .updateTransaction(this.transactionid, this.trans)
-      .subscribe(
+      .toPromise().then(
         (data) => console.log(data),
         (error) => console.log(error)
       );
     this.trans = new transaction();
     this.gotoList();
   }
-  onSubmit() {
-    this.updateTransaction();
+  async onSubmit() {
+    await this.updateTransaction();
   }
   gotoList() {
     this.router.navigateByUrl('transactions');

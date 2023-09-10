@@ -27,16 +27,16 @@ export class UpdateUserComponent implements OnInit {
       (error) => console.log(error)
     );
   }
-  updateUser() {
-    this.userservice.updateUser(this.id, this.user).subscribe(
+  async updateUser() {
+    await this.userservice.updateUser(this.id, this.user).toPromise().then(
       (data) => console.log(data),
       (error) => console.log(error)
     );
     this.user = new user();
     this.gottoList();
   }
-  onSubmit() {
-    this.updateUser();
+  async onSubmit() {
+    await this.updateUser();
   }
   gottoList() {
     this.router.navigate(['/users']);
