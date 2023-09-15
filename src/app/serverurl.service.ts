@@ -25,7 +25,7 @@ export class ServerurlService {
       url=environment.apiUrl+'/angularurl.php';
     } else {
       console.log('Build mode: Development');
-      document.cookie="__test=ae5c50926771a64dab0ff5eb1ff9e451; expires=2023-08-21T17:16:34.847Z; path=/; sameSite: 'None' ; Secure";
+      //document.cookie="__test=ae5c50926771a64dab0ff5eb1ff9e451; expires=2023-08-21T17:16:34.847Z; path=/; sameSite: 'None' ; Secure";
       url='/api'+'/angularurl.php';
       dev=true;
     }

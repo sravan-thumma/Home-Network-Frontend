@@ -1,6 +1,6 @@
 {
     "/api": {
-      "target": "http://expenses.homenetwork-dev.free.nf",
+      "target": "https://homenetwork-dev.onrender.com",
       "secure": false,
       "changeOrigin": true,
       "pathRewrite": {
