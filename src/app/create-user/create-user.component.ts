@@ -9,9 +9,12 @@ import { Router } from '@angular/router';
 })
 export class CreateUserComponent implements OnInit {
   user: user = new user();
+  role!:any;
   submitted = false;
   constructor(private userservice: UserService, private router: Router) {}
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.role=sessionStorage.getItem('role');
+  }
   newUser() {
     this.submitted = false;
     this.user = new user();

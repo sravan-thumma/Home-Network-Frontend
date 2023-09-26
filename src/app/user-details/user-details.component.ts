@@ -11,6 +11,7 @@ import { user } from '../user';
 export class UserDetailsComponent implements OnInit {
   id!: number;
   user!: user;
+  role!:any;
   constructor(
     private userservice: UserService,
     private router: Router,
@@ -18,6 +19,7 @@ export class UserDetailsComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     this.user = new user();
+    this.role=sessionStorage.getItem('role');
     this.id = this.route.snapshot.params['id'];
     this.userservice.getUser(this.id).subscribe(
       (data) => {

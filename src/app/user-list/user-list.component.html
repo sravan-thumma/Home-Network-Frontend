@@ -15,36 +15,39 @@
       </thead>
       <tbody>
         <tr *ngFor="let user of users | async">
-          <td>{{ user.username }}</td>
-          <td>{{ user.password }}</td>
-          <td>{{ user.email }}</td>
-          <td>{{ user.role }}</td>
-          <td>
-            <button (click)="deleteUser(user.id)" class="btn btn-danger">
-              Delete
-            </button>
-            <button
-              (click)="userDetails(user.id)"
-              class="btn btn-info"
-              style="margin-left: 10px"
-            >
-              Details
-            </button>
-            <button
-              (click)="updateDetails(user.id)"
-              class="btn btn-info"
-              style="margin-left: 10px"
-            >
-              Update
-            </button>
-            <button *ngIf="role==='Admin' "
-              (click)="loginAsUser(user.id)"
-              class="btn btn-danger"
-              style="margin-left: 10px"
-            >
-              Login
-            </button>
-          </td>
+          <ng-container *ngIf="(user.id === userid && role === 'User') || role === 'Admin'">
+            <td>{{ user.username }}</td>
+            <td>{{ user.password }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.role }}</td>
+            <td>
+              <button
+              (click)="deleteUser(user.id)" class="btn btn-danger">
+                Delete
+              </button>
+              <button
+                (click)="userDetails(user.id)"
+                class="btn btn-info"
+                style="margin-left: 10px"
+              >
+                Details
+              </button>
+              <button
+                (click)="updateDetails(user.id)"
+                class="btn btn-info"
+                style="margin-left: 10px"
+              >
+                Update
+              </button>
+              <button *ngIf="role==='Admin' "
+                (click)="loginAsUser(user.id)"
+                class="btn btn-danger"
+                style="margin-left: 10px"
+              >
+                Login
+              </button>
+            </td>
+          </ng-container>
         </tr>
       </tbody>
     </table>

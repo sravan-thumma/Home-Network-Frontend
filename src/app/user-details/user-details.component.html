@@ -5,7 +5,7 @@
   <div>
     <label><b>UserName: </b></label> {{ user.username }}
   </div>
-  <div>
+  <div *ngIf="role==='Admin' ">
     <label><b>Password: </b></label> {{ user.password }}
   </div>
   <div>

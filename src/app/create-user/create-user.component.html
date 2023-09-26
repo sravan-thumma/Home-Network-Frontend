@@ -1,5 +1,5 @@
 <h3>Create User</h3>
-<div [hidden]="submitted" style="width: 400px">
+<div [hidden]="submitted" style="width: 400px" *ngIf="role==='Admin' ">
   <form ngNativeValidate #form (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="name">Username</label>

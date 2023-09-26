@@ -13,11 +13,13 @@ export class UserListComponent implements OnInit {
   users!: Observable<user[]>;
   user!: user;
   role!:any;
+  userid!:any;
   constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit(): void {
     this.reloadData();
     this.role=sessionStorage.getItem('role');
+    this.userid=parseInt(sessionStorage.getItem('userid') ?? '0', 10);
   }
   reloadData() {
     this.users=this.userService.getUsersList();
