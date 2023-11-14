@@ -1,8 +1,24 @@
 # Homenetwork
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.1.
+## Build Preview
+TEST CREDENTIALS
+<ul>
+  <li>Username : TEST</li>
+  <li>Password : !@$TEST2k23</li>
+</ul> 
+<b>Demo URL : https://homenetwork-dev.onrender.com/<b>
+<br><br>
+<ul>
+  <li>Web</li>
+  https://www.youtube.com/watch?v=ztE6u_kpXuU
+</ul> 
+
+<br>Web :<br><br>
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/ztE6u_kpXuU/0.jpg)](https://www.youtube.com/watch?v=ztE6u_kpXuU)
 
 ## Development server
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.1.
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
